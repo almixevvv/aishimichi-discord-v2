@@ -4,6 +4,9 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			unique: true
 		},
+		SERVER_ID: {
+			type: DataTypes.STRING
+		},
 		MOOD_ID: {
 			type: DataTypes.STRING
 		},

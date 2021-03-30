@@ -62,6 +62,12 @@ module.exports = {
 					} catch (e) {
 						return message.channel.send(`Something wrong while inserting data\nError Type: ${e}`);
 					}
+				case 'voice':
+					try {
+					} catch (e) {
+						return message.channel.send(`Something wrong while inserting data\nError Type: ${e}`);
+					}
+					break;
 				default:
 					return message.channel.send(`No table found! Please check again`);
 			}

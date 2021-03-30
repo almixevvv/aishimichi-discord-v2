@@ -14,20 +14,21 @@ const Image = require('../model/greetImage')(sequelize, Sequelize.DataTypes);
 const Mood = require('../model/mood')(sequelize, Sequelize.DataTypes);
 const Text = require('../model/greetText')(sequelize, Sequelize.DataTypes);
 const Greet = require('../model/greetings')(sequelize, Sequelize.DataTypes);
+const Voice = require('../model/voice')(sequelize, Sequelize.DataTypes);
+const Roles = require('../model/leveledRoles')(sequelize, Sequelize.DataTypes);
+const Member = require('../model/member')(sequelize, Sequelize.DataTypes);
+const MemberList = require('../model/memberList')(sequelize, Sequelize.DataTypes);
 
-Tags.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
-
-Mood.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
-
-Image.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
-Image.belongsTo(Mood, { foreignKey: 'REC_ID', as: 'M_ID' });
-
-Text.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
-Text.belongsTo(Mood, { foreignKey: 'REC_ID', as: 'M_ID' });
+// Tags.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
+// Mood.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
+// Image.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
+// Image.belongsTo(Mood, { foreignKey: 'REC_ID', as: 'M_ID' });
+// Text.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
+// Text.belongsTo(Mood, { foreignKey: 'REC_ID', as: 'M_ID' });
 
 // Greet.belongsTo(Servers, { foreignKey: 'SERVER_ID', as: 'SERVER' });
 // Greet.belongsTo(Mood, { foreignKey: 'REC_ID', as: 'MOOD_ID' });
 // Greet.belongsTo(Image, { foreignKey: 'IMAGE_LINK', as: 'IMAGE_LINK' });
 // Greet.belongsTo(Text, { foreignKey: 'REC_ID', as: 'TEXT_ID' });
 
-module.exports = { Servers, Tags, Image, Mood, Text, Greet };
+module.exports = { Servers, Tags, Image, Mood, Text, Greet, Voice, Roles, Member };

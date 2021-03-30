@@ -7,9 +7,16 @@ module.exports = (sequelize, DataTypes) => {
 		NAME: {
 			type: DataTypes.STRING
 		},
-		DEFAULT_CHANNEL: DataTypes.TEXT,
-		VOICE_CHANNEL: DataTypes.TEXT,
+		SERVER_ID: {
+			type: DataTypes.STRING,
+			unique: true
+		},
 		CHANNEL_ID: {
+			type: DataTypes.TEXT,
+			defaultValue: 0,
+			allowNull: true
+		},
+		MEMBER_COUNT: {
 			type: DataTypes.TEXT,
 			defaultValue: 0,
 			allowNull: true
